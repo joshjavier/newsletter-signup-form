@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Preload web fonts -->
+  <link rel="preload" href="/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/roboto-v30-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+
+  <main>
+    <h1 class="visually-hidden">Newsletter Sign Up Component</h1>
+
+    <!-- Sign-up form start -->
+    <div class="signup-card">
+      <div class="image"></div>
+      <div class="content">
+        <!-- Allow content editors to change the copy with Markdown -->
+        <!-- Variables: title, content, buttonText, emailPlaceholder -->
+        <h2>Stay updated!</h2>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul>
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+
+        <form id="signup">
+          <label for="email">Email address</label>
+          <!-- Email placeholder and button text can also be changed for branding purposes -->
+          <div class="email-wrapper">
+            <div id="error" role="alert"></div>
+            <input type="email" name="email" id="email" placeholder="email@company.com" aria-required="true">
+          </div>
+          <button>Subscribe to monthly newsletter</button>
+        </form>
+      </div>
+    </div>
+    <!-- Sign-up form end -->
+
+    <!-- Success message start -->
+    <!-- Good candidate for a partial -->
+    <!-- Variables: title, content, buttonText, icon -->
+    <dialog id="success" class="success-card" role="alertdialog" aria-labelledby="success-label" aria-describedby="success-description">
+      <h2 id="success-label">Thanks for subscribing!</h2>
+      <p id="success-description">A confirmation email has been sent to ash@loremcompany.com. Please open it and click the button inside to confirm your subscription.</p>
+      <button>Dismiss message</button>
+    </dialog>
+    <!-- Success message end -->
+
+  </main>
+</body>
+</html>

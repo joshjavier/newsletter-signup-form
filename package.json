@@ -1,0 +1,24 @@
+{
+  "name": "newsletter-sign-up-with-success-message",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm:css\" \"eleventy --serve\"",
+    "css": "postcss src/css/global.css -o dist/css/global.css -w",
+    "prebuild": "postcss src/css/global.css -o dist/css/global.css",
+    "build": "eleventy"
+  },
+  "author": "Josh Javier",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "concurrently": "^8.1.0",
+    "cssnano": "^6.0.1",
+    "djlint": "^1.30.0",
+    "modern-css-reset": "^1.4.0",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-import-ext-glob": "^2.1.1",
+    "postcss-nested": "^6.0.1",
+    "prettier": "2.8.8"
+  }
+}
