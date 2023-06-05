@@ -6,6 +6,32 @@
   border-radius: var(--rounded-36);
   box-shadow: var(--shadow-card);
 
+  /* Make it fun */
+  animation-name: fadeInBounce;
+  animation-duration: 640ms;
+  animation-timing-function: cubic-bezier(0.68,-0.55,0.27,1.55);
+
+  @keyframes fadeInBounce {
+    from {
+      transform: translateY(5em);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &-label {
+    margin-top: var(--space-40);
+  }
+
+  &::backdrop {
+    /* ::backdrop doesn't inherit from any element, so we can't use CSS variables from :root :( */
+    background: #36384D;
+  }
+
   /* On small viewports, this component takes up the whole screen */
   @media screen and (max-width: 40em) {
     height: 100%;
@@ -22,14 +48,5 @@
         margin-top: auto;
       }
     }
-  }
-
-  &-label {
-    margin-top: var(--space-40);
-  }
-
-  &::backdrop {
-    /* ::backdrop doesn't inherit from any element, so we can't use CSS variables from :root :( */
-    background: #36384D;
   }
 }

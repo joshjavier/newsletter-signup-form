@@ -39,5 +39,6 @@ h2 {
 }
 
 :focus-visible {
-  outline: 0.25em solid var(--color-vermellion);
+  outline: calc(2 / 16 * 1em) solid var(--color-vermellion);
+  outline-offset: calc(2 / 16 * 1em);
 }

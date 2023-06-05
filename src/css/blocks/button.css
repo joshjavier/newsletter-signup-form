@@ -1,6 +1,6 @@
 button {
   width: 100%;
-  padding: var(--space-16);
+  padding: var(--space-16) var(--space-40);
   border: none;
   border-radius: var(--rounded-8);
   background: var(--color-dark-navy);

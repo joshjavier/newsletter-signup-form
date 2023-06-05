@@ -27,7 +27,7 @@
       <div class="signupCard-image">
         <picture>
           <source media="(min-width: 40rem)" srcset="./images/illustration-sign-up-desktop.svg">
-          <img src="./images/illustration-sign-up-mobile.svg" alt="" width="375" height="284">
+          <img src="./images/illustration-sign-up-mobile.svg" alt="" width="375" height="284" role="img">
         </picture>
       </div>
       <div class="signupCard-content">
@@ -47,8 +47,8 @@
           <div class="field">
             <label for="email" class="field-label">Email address</label>
             <!-- Email placeholder and button text can also be changed for branding purposes -->
-            <div id="error" role="alert" class="field-error"></div>
-            <input type="email" name="email" id="email" placeholder="email@company.com" aria-required="true">
+            <div id="emailError" aria-live="assertive" class="field-error"></div>
+            <input type="email" name="email" id="email" placeholder="email@company.com" aria-required="true" aria-describedby="emailError">
           </div>
           <button>Subscribe to monthly newsletter</button>
         </form>
