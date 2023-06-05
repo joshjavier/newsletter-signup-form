@@ -8,5 +8,6 @@ module.exports = (config) => {
       input: 'src',
       output: 'dist',
     },
+    pathPrefix: '/newsletter-signup-form/',
   }
 }
