@@ -1,0 +1,15 @@
+button {
+  width: 100%;
+  padding: var(--space-16);
+  border: none;
+  border-radius: var(--rounded-8);
+  background: var(--color-dark-navy);
+  color: var(--color-white);
+  font-weight: var(--weight-bold);
+  transition: box-shadow ease-in-out 200ms;
+
+  &:hover {
+    background: var(--gradient-fiery);
+    box-shadow: var(--shadow-button);
+  }
+}

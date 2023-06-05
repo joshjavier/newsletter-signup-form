@@ -1,0 +1,35 @@
+.success {
+  --flow-space: var(--space-24);
+
+  padding: var(--space-40-48) var(--space-24-64) var(--space-40-64) var(--space-24-64);
+  border: none;
+  border-radius: var(--rounded-36);
+  box-shadow: var(--shadow-card);
+
+  /* On small viewports, this component takes up the whole screen */
+  @media screen and (max-width: 40em) {
+    height: 100%;
+    max-height: unset;
+    border-radius: 0;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      > :first-child,
+      > :last-child {
+        margin-top: auto;
+      }
+    }
+  }
+
+  &-label {
+    margin-top: var(--space-40);
+  }
+
+  &::backdrop {
+    /* ::backdrop doesn't inherit from any element, so we can't use CSS variables from :root :( */
+    background: #36384D;
+  }
+}

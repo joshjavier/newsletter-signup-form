@@ -1,0 +1,69 @@
+---
+permalink: 'css/theme.css'
+---
+/* Fluid custom properties */
+:root {
+  --fluid-min-width: {{ tokens.viewport.min }};
+  --fluid-max-width: {{ tokens.viewport.max }};
+
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  );
+}
+
+@media screen and (min-width: 1440px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
+
+/* Design tokens */
+:root {
+  /* Colors */
+  --color-white: {{ tokens.color.white }};
+  --color-grey-25: {{ tokens.color.grey25 }};
+  --color-pale-navy: {{ tokens.color.paleNavy }};
+  --color-dark-navy: {{ tokens.color.darkNavy }};
+  --color-vermellion: {{ tokens.color.vermellion }};
+
+  --gradient-fiery: linear-gradient(204.47deg, #FF6A3A 0%, #FF527B 100%);
+
+  /* Type */
+  --font-base: {{ tokens.font.base }};
+  --text-body: calc({{ tokens.text.body }} / 16 * 1rem);
+  --text-body-small: calc({{ tokens.text.bodySmall }} / 16 * 1rem);
+
+  --f-h-min: {{ tokens.text.headingMin }};
+  --f-h-max: {{ tokens.text.headingMax }};
+  --text-heading: calc(
+    (var(--f-h-min) / 16 * 1rem) + (var(--f-h-max) - var(--f-h-min)) *
+      var(--fluid-bp)
+  );
+
+  --weight-base: {{ tokens.weight.base }};
+  --weight-bold: {{ tokens.weight.bold }};
+  --leading-loose: {{ tokens.leading.loose }};
+  --leading-tight: {{ tokens.leading.tight }};
+  --measure-base: {{ tokens.measure.base }};
+
+  /* Space */
+  --space-8: calc({{ tokens.size.2xs }} / 16 * 1rem);
+  --space-16: calc({{ tokens.size.s }} / 16 * 1rem);
+  --space-24: calc({{ tokens.size.m }} / 16 * 1rem);
+  --space-40: calc({{ tokens.size.xl }} / 16 * 1rem);
+
+  --space-24-64: calc(var(--space-24) + ({{ tokens.size.3xl }} - {{ tokens.size.m }}) * var(--fluid-bp));
+  --space-40-64: calc(var(--space-40) + ({{ tokens.size.3xl }} - {{ tokens.size.xl }}) * var(--fluid-bp));
+  --space-40-48: calc(var(--space-40) + ({{ tokens.size.2xl }} - {{ tokens.size.xl }}) * var(--fluid-bp));
+
+  /* Rounded borders */
+  --rounded-8: calc({{ tokens.size.2xs }} / 16 * 1rem);
+  --rounded-12: calc({{ tokens.size.xs }} / 16 * 1rem);
+  --rounded-36: calc({{ tokens.size.l }} / 16 * 1rem);
+
+  /* Shadow effects */
+  --shadow-button: 0px 1em 2em rgba(255, 97, 85, 0.5);
+  --shadow-card: 0px 1em 3.75em rgba(0, 0, 0, 0.25);
+}
