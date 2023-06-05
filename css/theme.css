@@ -1,0 +1,66 @@
+/* Fluid custom properties */
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1440;
+
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  );
+}
+
+@media screen and (min-width: 1440px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
+
+/* Design tokens */
+:root {
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-grey-25: #19182B40;
+  --color-pale-navy: #36384D;
+  --color-dark-navy: #242742;
+  --color-vermellion: #FF6155;
+
+  --gradient-fiery: linear-gradient(204.47deg, #FF6A3A 0%, #FF527B 100%);
+
+  /* Type */
+  --font-base: Roboto, sans-serif;
+  --text-body: calc(16 / 16 * 1rem);
+  --text-body-small: calc(12 / 16 * 1rem);
+
+  --f-h-min: 40;
+  --f-h-max: 56;
+  --text-heading: calc(
+    (var(--f-h-min) / 16 * 1rem) + (var(--f-h-max) - var(--f-h-min)) *
+      var(--fluid-bp)
+  );
+
+  --weight-base: 400;
+  --weight-bold: 700;
+  --leading-loose: 1.5;
+  --leading-tight: 1;
+  --measure-base: 60ch;
+
+  /* Space */
+  --space-8: calc(8 / 16 * 1rem);
+  --space-16: calc(16 / 16 * 1rem);
+  --space-24: calc(24 / 16 * 1rem);
+  --space-40: calc(40 / 16 * 1rem);
+
+  --space-24-64: calc(var(--space-24) + (64 - 24) * var(--fluid-bp));
+  --space-40-64: calc(var(--space-40) + (64 - 40) * var(--fluid-bp));
+  --space-40-48: calc(var(--space-40) + (48 - 40) * var(--fluid-bp));
+
+  /* Rounded borders */
+  --rounded-8: calc(8 / 16 * 1rem);
+  --rounded-12: calc(12 / 16 * 1rem);
+  --rounded-36: calc(36 / 16 * 1rem);
+
+  /* Shadow effects */
+  --shadow-button: 0px 1em 2em rgba(255, 97, 85, 0.5);
+  --shadow-card: 0px 1em 3.75em rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,330 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Enforce a measure for all elements, with a few exceptions */
+* {
+  max-inline-size: var(--measure-base, 60ch);
+}
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-inline-size: none;
+}
+/* Base styles */
+body {
+  font-family: var(--font-base);
+  font-size: var(--text-body);
+  font-weight: var(--weight-base);
+  line-height: var(--leading-loose);
+  color: var(--color-white);
+  background: var(--color-pale-navy);
+}
+main {
+  min-height: 100vh;
+}
+@media screen and (min-width: 40em) {
+main {
+    display: grid;
+    place-content: center;
+    padding: var(--space-24)
+}
+  }
+h2 {
+  font-size: var(--text-heading);
+  line-height: var(--leading-tight);
+}
+:focus-visible {
+  outline: calc(2 / 16 * 1em) solid var(--color-vermellion);
+  outline-offset: calc(2 / 16 * 1em);
+}
+/* Flow CSS Utility */
+/* Info: https://piccalil.li/quick-tip/flow-utility/ */
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+.visually-hidden:not(:focus):not(:active) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+button {
+  width: 100%;
+  padding: var(--space-16) var(--space-40);
+  border: none;
+  border-radius: var(--rounded-8);
+  background: var(--color-dark-navy);
+  color: var(--color-white);
+  font-weight: var(--weight-bold);
+  transition: box-shadow ease-in-out 200ms;
+}
+button:hover {
+    background: var(--gradient-fiery);
+    box-shadow: var(--shadow-button);
+  }
+.field {
+  position: relative;
+}
+.field-label,
+  .field-error {
+    font-size: var(--text-body-small);
+    font-weight: var(--weight-bold);
+    display: block;
+  }
+.field-label {
+    padding-bottom: var(--space-8);
+  }
+.field-error {
+    color: var(--color-vermellion);
+  }
+/* Error messages are flush right on the same line as field labels */
+.field-error {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+/* Hide error message when empty */
+.field-error:empty {
+    display: none;
+  }
+/* Base input field styles */
+.field input {
+    --border-color: var(--color-grey-25);
+
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: var(--rounded-8);
+    padding: var(--space-16) var(--space-24);
+  }
+.field input:hover {
+      --border-color: var(--color-dark-navy);
+    }
+.field input::placeholder {
+      opacity: 0.5;
+    }
+/* Invalid field styles */
+.field.isInvalid input {
+    --border-color: var(--color-vermellion);
+    background: #FF615526;
+    color: var(--border-color);
+  }
+.signupCard {
+  background: var(--color-white);
+  color: var(--color-dark-navy);
+  max-width: 58em;
+}
+.signupCard-image img {
+    /* Image takes up the viewport width */
+    width: 100%;
+    height: auto;
+
+    /* Rounded bottom corners */
+    border-bottom-left-radius: var(--rounded-12);
+    border-bottom-right-radius: var(--rounded-12);
+  }
+/* Add padding around content */
+.signupCard-content {
+    padding: var(--space-40) var(--space-24);
+  }
+/* Set gap between elements inside text and form sections */
+.signupCard-content > * {
+    --flow-space: var(--space-24);
+  }
+/**
+   * If card copy contains list markup:
+   * 1. Use slightly smaller spacing (10px) between list items
+   * 2. Remove the default left padding in ul tags
+   * 3. Replace bullet points with check icons
+   */
+.signupCard-content li + li {
+    margin-top: 0.625rem; /* 1 */
+  }
+.signupCard-content ul {
+    padding-left: 0;
+  }
+/* 2 */
+.signupCard-content ul li {
+      list-style-type: none; /* 3 */
+      display: flex;
+      gap: 1em;
+    }
+.signupCard-content ul li::before {
+        content: '\200B'; /* zero-width space keeps list semantics in Safari/VoiceOver */
+        background-image: url('../images/icon-list.svg');
+        width: 1.3125rem; /* 21px */
+        height: 1.3125rem; /* 21px */
+        flex-shrink: 0;
+        transform: translate(0, 1px); /* optical adjustment */
+      }
+.signupCard .form {
+    margin-top: var(--space-40);
+  }
+@media screen and (min-width: 40em) {
+.signupCard {
+    padding: var(--space-24) var(--space-24) var(--space-24) var(--space-24-64);
+
+    /**
+     * 1. Switch to a 2-column layout with equal widths
+     * 2. Put the content on the first/left column
+     * 3. Image is on the right column
+     */
+    display: grid; /* 1 */
+    grid-template-columns: 1fr 1fr; /* 1 */
+    column-gap: var(--space-24-64);
+    border-radius: var(--rounded-36);
+    box-shadow: var(--shadow-card)
+}
+
+    .signupCard > * {
+      grid-row: 1 / 2; /* 1 */
+    }
+
+    .signupCard-content {
+      grid-column: 1 / 2;  /* 2 */
+      padding: 0;
+
+      /* Center content vertically */
+      display: grid;
+      align-content: center;
+
+      /* Enforce a minimum height so there's always enough whitespace at the top and bottom of the content  */
+      min-height: 40em;
+    }
+
+    .signupCard-image {
+      grid-column: 2 / 3;
+    }  /* 3 */
+
+      /* Image will take the full height of the card */
+      .signupCard-image picture, .signupCard-image img {
+        height: 100%;
+      }
+
+      .signupCard-image img {
+        object-fit: cover;
+        object-position: right;
+        border-radius: var(--rounded-12);
+      }
+  }
+.success {
+  --flow-space: var(--space-24);
+
+  padding: var(--space-40-48) var(--space-24-64) var(--space-40-64) var(--space-24-64);
+  border: none;
+  border-radius: var(--rounded-36);
+  box-shadow: var(--shadow-card);
+
+  /* Make it fun */
+  animation-name: fadeInBounce;
+  animation-duration: 640ms;
+  animation-timing-function: cubic-bezier(0.68,-0.55,0.27,1.55);
+}
+@keyframes fadeInBounce {
+    from {
+      transform: translateY(5em);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+.success-label {
+    margin-top: var(--space-40);
+  }
+.success::backdrop {
+    /* ::backdrop doesn't inherit from any element, so we can't use CSS variables from :root :( */
+    background: #36384D;
+  }
+/* On small viewports, this component takes up the whole screen */
+@media screen and (max-width: 40em) {
+.success {
+    height: 100%;
+    max-height: unset;
+    border-radius: 0
+}
+
+    .success .content {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+      .success .content > :first-child,
+      .success .content > :last-child {
+        margin-top: auto;
+      }
+  }
