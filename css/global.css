@@ -129,6 +129,7 @@ button {
   color: var(--color-white);
   font-weight: var(--weight-bold);
   transition: box-shadow ease-in-out 200ms;
+  cursor: pointer;
 }
 button:hover {
     background: var(--gradient-fiery);
@@ -205,13 +206,14 @@ button:hover {
 /**
    * If card copy contains list markup:
    * 1. Use slightly smaller spacing (10px) between list items
-   * 2. Remove the default left padding in ul tags
+   * 2. Remove the default margin and padding in ul tags
    * 3. Replace bullet points with check icons
    */
 .signupCard-content li + li {
     margin-top: 0.625rem; /* 1 */
   }
 .signupCard-content ul {
+    margin-bottom: 0; /* 2 */
     padding-left: 0;
   }
 /* 2 */
@@ -260,7 +262,7 @@ button:hover {
       align-content: center;
 
       /* Enforce a minimum height so there's always enough whitespace at the top and bottom of the content  */
-      min-height: 40em;
+      min-height: calc(40em - var(--space-24) * 2);
     }
 
     .signupCard-image {
