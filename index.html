@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
 
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 
   <!-- Preload web fonts -->
-  <link rel="preload" href="/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/roboto-v30-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/newsletter-signup-form/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin="">
+  <link rel="preload" href="/newsletter-signup-form/fonts/roboto-v30-latin-700.woff2" as="font" type="font/woff2" crossorigin="">
 
-  <link rel="stylesheet" href="/fonts/fonts.css">
-  <link rel="stylesheet" href="/css/theme.css">
-  <link rel="stylesheet" href="/css/global.css">
-  <script src="index.js" defer></script>
+  <link rel="stylesheet" href="/newsletter-signup-form/fonts/fonts.css">
+  <link rel="stylesheet" href="/newsletter-signup-form/css/theme.css">
+  <link rel="stylesheet" href="/newsletter-signup-form/css/global.css">
+  <script src="index.js" defer=""></script>
 </head>
 <body>
 
@@ -25,8 +25,8 @@
     <div class="signupCard">
       <div class="signupCard-image">
         <picture>
-          <source media="(min-width: 40rem)" srcset="./images/illustration-sign-up-desktop.svg">
-          <img src="./images/illustration-sign-up-mobile.svg" alt="" width="375" height="284" role="img">
+          <source media="(min-width: 40rem)" srcset="images/illustration-sign-up-desktop.svg">
+          <img src="images/illustration-sign-up-mobile.svg" alt="" width="375" height="284" role="img">
         </picture>
       </div>
       <div class="signupCard-content">
@@ -42,7 +42,7 @@
           </ul>
         </div>
 
-        <form id="signup" class="form flow" novalidate>
+        <form id="signup" class="form flow" novalidate="">
           <div class="field">
             <label for="email" class="field-label">Email address</label>
             <!-- Email placeholder and button text can also be changed for branding purposes -->
@@ -58,7 +58,7 @@
     <!-- Variables: title, content, buttonText, icon -->
     <dialog id="success" class="success" role="alertdialog" aria-labelledby="success-label" aria-describedby="success-description">
       <div class="content flow">
-        <img src="./images/icon-success.svg" alt="" width="64" height="64" role="img">
+        <img src="images/icon-success.svg" alt="" width="64" height="64" role="img">
         <h2 id="success-label" class="success-label">Thanks for subscribing!</h2>
         <p id="success-description" class="success-description">A confirmation email has been sent to ash@loremcompany.com. Please open it and click the button inside to confirm your subscription.</p>
         <form method="dialog">
