@@ -68,9 +68,15 @@ Users should be able to:
 
   1. The user types something and leaves the field, either by pressing Tab or clicking on a different element. This type of validation is associated with the `blur` event.
 
-  2. The user submits the form. As you have guessed, this is associated with the `submit` event.
+     [afterward-validation.webm](https://github.com/joshjavier/newsletter-signup-form/assets/46987872/04c23161-c7b3-4e60-9e2f-598e8d40509d)
+
+  2. The user submits the form. As you have guessed, this is associated with the `submit` event. In this solution, the focus is shifted back to the email field if it didn't satisfy validation.
+
+     [submit-validation.webm](https://github.com/joshjavier/newsletter-signup-form/assets/46987872/719702ed-21ac-4ec2-a22d-a43aff1eb7d3)
 
   3. Lastly, when the user goes back to the field to correct a mistake, instant validation is triggered so that the error message/styling can be removed once the user inputs the correct format. This is associated with the `keyup` event, though I think the `input` event can be used as well.
+
+     [instant-validation.webm](https://github.com/joshjavier/newsletter-signup-form/assets/46987872/0c1c241b-facb-4186-9972-eb1aedf3bf3c)
 
 ### Continued development
 
