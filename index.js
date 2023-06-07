@@ -74,8 +74,8 @@ form.addEventListener('submit', (e) => {
     elEmail.focus()
 
   } else {
-    const email = elEmail.value
-    success.querySelector('.success-description').innerHTML = `A confirmation email has been sent to <strong>${email}</strong>. Please open it and click the button inside to confirm your subscription.`
+    const userEmail = success.querySelector('.jsUserEmail')
+    userEmail.textContent = elEmail.value
     success.showModal()
     form.reset()
   }
